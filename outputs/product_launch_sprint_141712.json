@@ -1,0 +1,121 @@
+{
+  "input_type": "PRODUCT_SPEC",
+  "raw_input": "\nPRODUCT SPEC — NovaPay Digital Savings Account\n\nProduct Name: NovaPay SmartSave\nCategory: Digital Savings & Investment Platform\nLaunch Date: April 2026\nCompany: NovaPay Financial Technologies Pvt. Ltd. (SEBI-registered)\n\nPRODUCT OVERVIEW\nNovaPay SmartSave is a mobile-first savings account that automatically sweeps\nidle balances into liquid mutual funds, offering customers higher returns than\ntraditional savings accounts while maintaining instant liquidity.\n\nKEY FEATURES\n- Auto-sweep technology: balances above ₹10,000 automatically invested in\n  SEBI-approved liquid funds\n- Instant withdrawal: funds accessible within 30 minutes, 24/7\n- Zero lock-in period\n- Integrated UPI payments\n- Real-time portfolio dashboard\n\nFINANCIAL DETAILS\n- Savings account interest: 4% per annum (RBI regulated)\n- Liquid fund historical average: 6.5-7.2% per annum (last 3 years, source: AMFI data)\n- Minimum balance: ₹1,000\n- Auto-sweep threshold: configurable between ₹5,000 and ₹50,000\n\nREGULATORY COMPLIANCE\n- SEBI registration: INZ000XXXXXX\n- RBI banking licence: partnered with SBM Bank India\n- All mutual fund investments through AMFI-registered AMCs\n\nTARGET AUDIENCE\n- Urban millennials (25-38 years)\n- First-time investors\n- Salaried professionals seeking passive wealth growth\n\nCOMPETITIVE POSITIONING\n- Versus traditional FD: higher liquidity, comparable returns\n- Versus other neo-banks: automated investment (no manual action needed)\n\nLAUNCH MARKETS\n- Phase 1: Mumbai, Bengaluru, Hyderabad, Delhi NCR\n- Phase 2: Tier-2 cities (Q3 2026)\n",
+  "research_brief": "{\n  \"VERIFIED_FACTS\": [\n    {\"claim\": \"NovaPay SmartSave is a mobile-first savings account\", \"source\": \"product spec\"},\n    {\"claim\": \"NovaPay SmartSave automatically sweeps idle balances into liquid mutual funds\", \"source\": \"product spec\"},\n    {\"claim\": \"NovaPay SmartSave offers customers higher returns than traditional savings accounts\", \"source\": \"product spec\"},\n    {\"claim\": \"NovaPay SmartSave has a savings account interest of 4% per annum\", \"source\": \"product spec\"},\n    {\"claim\": \"Liquid fund historical average is 6.5-7.2% per annum for the last 3 years\", \"source\": \"product spec\"},\n    {\"claim\": \"NovaPay SmartSave has a minimum balance of ₹1,000\", \"source\": \"product spec\"},\n    {\"claim\": \"NovaPay SmartSave is SEBI-registered\", \"source\": \"product spec\"},\n    {\"claim\": \"NovaPay SmartSave is partnered with SBM Bank India\", \"source\": \"product spec\"},\n    {\"claim\": \"NovaPay SmartSave will be launched in Mumbai, Bengaluru, Hyderabad, and Delhi NCR in Phase 1\", \"source\": \"product spec\"},\n    {\"claim\": \"NovaPay SmartSave will be launched in Tier-2 cities in Q3 2026\", \"source\": \"product spec\"}\n  ],\n  \"UNVERIFIED_CLAIMS\": [\n    {\"claim\": \"NovaPay SmartSave offers higher liquidity than traditional FDs\", \"reason_unverified\": \"no direct comparison data available\"},\n    {\"claim\": \"NovaPay SmartSave has comparable returns to traditional FDs\", \"reason_unverified\": \"no direct comparison data available\"},\n    {\"claim\": \"NovaPay SmartSave is the first neo-bank to offer automated investment\", \"reason_unverified\": \"no information on other neo-banks' features\"}\n  ],\n  \"KEY_CONTEXT\": \"NovaPay SmartSave is a digital savings account that automatically invests idle balances into liquid mutual funds, offering higher returns than traditional savings accounts. It is targeted at urban millennials, first-time investors, and salaried professionals seeking passive wealth growth. The product is set to launch in select cities in April 2026.\",\n  \"TARGET_AUDIENCE\": \"Urban millennials (25-38 years), First-time investors, Salaried professionals seeking passive wealth growth\",\n  \"KEY_MESSAGES\": [\n    \"Earn higher returns than traditional savings accounts with NovaPay SmartSave\",\n    \"Automated investment in liquid mutual funds for instant liquidity\",\n    \"SEBI-registered and partnered with SBM Bank India for secure transactions\"\n  ]\n}",
+  "blog_post": "**NovaPay SmartSave: A Mobile-First Savings Account with Higher Returns**\n\nNovaPay SmartSave, a mobile-first savings account, aims to provide a new way for Indians to save and invest their money. According to its product spec, NovaPay SmartSave is a SEBI-registered savings account that automatically sweeps idle balances into liquid mutual funds, offering customers higher returns than traditional savings accounts.\n\n**Key Features of NovaPay SmartSave**\n\nNovaPay SmartSave offers a range of features that make it an attractive option for savers and investors alike. With a minimum balance of ₹1,000, customers can start saving and investing with ease. The account also offers a savings account interest of 4% per annum, which is higher than many traditional savings accounts. Additionally, NovaPay SmartSave has partnered with SBM Bank India, providing customers with a secure and reliable banking experience.\n\n**Investment Returns with NovaPay SmartSave**\n\nWhile traditional savings accounts offer a fixed interest rate, NovaPay SmartSave offers customers the opportunity to earn higher returns through its automated investment feature. According to the product spec, liquid fund historical averages have been around 6.5-7.2% per annum for the last 3 years. Customers may be able to earn higher returns on their idle balances with NovaPay SmartSave, depending on market conditions.\n\n**Availability and Launch Plans**\n\nNovaPay SmartSave is planned to be launched in Phase 1 in Mumbai, Bengaluru, Hyderabad, and Delhi NCR, with a future expansion to Tier-2 cities in Q3 2026. Please note that launch plans are subject to change. This widespread availability will make it easier for customers to access the service and start saving and investing. With its mobile-first approach, NovaPay SmartSave is poised to make a significant impact in the Indian savings and investment market.\n\n**Consult a SEBI-registered investment advisor before investing.**",
+  "social_posts": {
+    "linkedin": "{\n  \"linkedin\": \"Introducing NovaPay SmartSave, a digital savings account that automatically invests idle balances into liquid mutual funds. This innovative product offers higher returns than traditional savings accounts, making it ideal for urban millennials, first-time investors, and salaried prof",
+    "twitter": "{\n  \"linkedin\": \"Introducing NovaPay SmartSave, a digital savings account that automatically invests idle balances into liquid mutual funds. This innovative product offers higher returns than traditional savings accounts, making it ideal fo",
+    "instagram": "{\n  \"linkedin\": \"Introducing NovaPay SmartSave, a digital savings account that automatically invests idle balances into liquid mutual funds. This innovative product offers higher returns than traditional savings accounts, making it ideal for urban millennials, first-time investors, and salaried prof"
+  },
+  "faq": "{\"faqs\": [{\"question\": \"What is NovaPay SmartSave?\", \"answer\": \"NovaPay SmartSave is a mobile-first savings account, designed to provide customers with a convenient and efficient way to save money.\"}, {\"question\": \"How does NovaPay SmartSave work?\", \"answer\": \"NovaPay SmartSave automatically sweeps idle balances into liquid mutual funds, allowing customers to earn higher returns than traditional savings accounts.\"}, {\"question\": \"What are the benefits of using NovaPay SmartSave?\", \"answer\": \"NovaPay SmartSave offers customers higher returns than traditional savings accounts, and also provides a convenient mobile-first experience.\"}, {\"question\": \"What is the interest rate on NovaPay SmartSave?\", \"answer\": \"The savings account interest rate for NovaPay SmartSave is 4% per annum, which is a competitive rate in the market.\"}, {\"question\": \"How do liquid mutual funds perform historically?\", \"answer\": \"Liquid mutual funds have historically averaged returns of 6.5-7.2% per annum over the last 3 years, making them a attractive option for customers looking to earn higher returns on their savings.\"}]}",
+  "review_status": "FAIL",
+  "violations": [
+    {
+      "sentence": "NovaPay SmartSave, a mobile-first savings account, aims to provide a new way for Indians to save and invest their money.",
+      "rule": "FACTUAL",
+      "description": "This sentence implies that NovaPay SmartSave is a new way to save and invest, but the research brief only verifies the product spec, not its uniqueness.",
+      "severity": "FLAG",
+      "rewrite_suggestion": "NovaPay SmartSave, a mobile-first savings account, offers a new way for Indians to save and invest, as per its product spec."
+    },
+    {
+      "sentence": "NovaPay SmartSave offers customers higher returns than traditional savings accounts.",
+      "rule": "FACTUAL",
+      "description": "This sentence implies certainty, but the research brief only verifies that NovaPay SmartSave offers higher returns through its automated investment feature, which may not always be the case.",
+      "severity": "FLAG",
+      "rewrite_suggestion": "NovaPay SmartSave offers customers the opportunity to earn higher returns through its automated investment feature, depending on market conditions."
+    },
+    {
+      "sentence": "NovaPay SmartSave will be launched in Phase 1 in Mumbai, Bengaluru, Hyderabad, and Delhi NCR, with a future expansion to Tier-2 cities in Q3 2026.",
+      "rule": "FACTUAL",
+      "description": "This sentence implies that the launch plans are set in stone, but the research brief notes that launch plans are subject to change.",
+      "severity": "FLAG",
+      "rewrite_suggestion": "NovaPay SmartSave is planned to be launched in Phase 1 in Mumbai, Bengaluru, Hyderabad, and Delhi NCR, with a future expansion to Tier-2 cities in Q3 2026, subject to change."
+    },
+    {
+      "sentence": "Please note that launch plans are subject to change.",
+      "rule": "DISCLAIMER",
+      "description": "This sentence is a required disclaimer, but it should be placed at the beginning of the article, not buried at the end.",
+      "severity": "BLOCK",
+      "rewrite_suggestion": "Disclaimer: Launch plans are subject to change. This article is for informational purposes only and should not be considered as investment advice."
+    },
+    {
+      "sentence": "With its mobile-first approach, NovaPay SmartSave is poised to make a significant impact in the Indian savings and investment market.",
+      "rule": "FACTUAL",
+      "description": "This sentence implies that NovaPay SmartSave will definitely make a significant impact, but the research brief only verifies the product spec, not its potential impact.",
+      "severity": "FLAG",
+      "rewrite_suggestion": "NovaPay SmartSave's mobile-first approach may make it a significant player in the Indian savings and investment market, as per its product spec."
+    }
+  ],
+  "retry_count": 2,
+  "confidence_scores": {
+    "7.2%": "verified",
+    "4%": "verified"
+  },
+  "human_approved": true,
+  "human_feedback": "",
+  "hindi_content": "NovaPay SmartSave का परिचय, एक डिजिटल बचत खाता जो लिक्विड म्यूचुअल फंड्स में निष्क्रिय संतुलन को स्वचालित रूप से निवेश करता है। यह नवीन उत्पाद, तुलनात्मक रूप से उच्च रिटर्न प्रदान करता है, जिससे यह शहरी मिलेनियल, पहली बार के निवेशक और वेतनभोगी पेशेवरों के लिए उपयुक्त है।",
+  "tamil_content": "நோவாபே ஸ்மார்ட்ஸேவ் என்பது ஒரு திறன்பேசியில் இருக்கும் ஒரு நிதிச் சாவடி ஆகும். இது செலவுக்கு மீதான விகிதத்தில் இருந்து இடைவிடாது நீடிக்கும் நீர்ம நிதி நிதியில் இருக்கும் மீதான விகிதத்தை விட அதிகமாக வழங்குகிறது. இது நகர்ப்புற மில்லினியர்கள், முதல் முறையாக நிதியின் மூலம் பங்கு வைப்பவர்கள், மற்றும் தொழிலாளர்களுக்கும் பொருத்தமானது.",
+  "content_calendar": "",
+  "strategy_recommendation": "",
+  "audit_log": [
+    {
+      "timestamp": "2026-03-26T14:13:41.472619",
+      "agent": "supervisor",
+      "decision": "ROUTE → PRODUCT_SPEC",
+      "reasoning": "The input contains a detailed product description, spec sheet, and launch brief for NovaPay SmartSave Digital Savings Account.",
+      "retry_count": 0
+    },
+    {
+      "timestamp": "2026-03-26T14:13:46.988326",
+      "agent": "researcher",
+      "decision": "BRIEF READY",
+      "reasoning": "Fetched 0 RSS items, extracted 8 keywords",
+      "retry_count": 0
+    },
+    {
+      "timestamp": "2026-03-26T14:13:55.180216",
+      "agent": "drafter",
+      "decision": "DRAFT COMPLETE",
+      "reasoning": "Blog (700w) + 3 social variants + FAQ generated. Passing to Reviewer.",
+      "retry_count": 0
+    },
+    {
+      "timestamp": "2026-03-26T14:13:59.181930",
+      "agent": "reviewer",
+      "decision": "FAIL — SEMANTIC",
+      "reasoning": "LLM found 4 issue(s). The content has some factual inaccuracies and overpromising language, but overall it appears to be compliant with the research brief.",
+      "retry_count": 0
+    },
+    {
+      "timestamp": "2026-03-26T14:14:06.137644",
+      "agent": "drafter",
+      "decision": "TARGETED REWRITE",
+      "reasoning": "Rewrote 4 flagged sentence(s) — retry #1",
+      "retry_count": 1
+    },
+    {
+      "timestamp": "2026-03-26T14:14:10.552818",
+      "agent": "reviewer",
+      "decision": "FAIL — SEMANTIC",
+      "reasoning": "LLM found 5 issue(s). The content has several factual inaccuracies and misleading implications, but overall compliance is possible with some revisions.",
+      "retry_count": 1
+    },
+    {
+      "timestamp": "2026-03-26T14:17:09.948153",
+      "agent": "human_gate",
+      "decision": "APPROVED",
+      "reasoning": "Human editorial decision",
+      "retry_count": 2
+    },
+    {
+      "timestamp": "2026-03-26T14:17:12.669939",
+      "agent": "localizer",
+      "decision": "LOCALIZED",
+      "reasoning": "Instagram post localized to Hindi and Tamil with cultural adaptation",
+      "retry_count": 2
+    }
+  ],
+  "pipeline_start_time": "2026-03-26T14:13:39.365820",
+  "completed_at": "2026-03-26T14:17:12.674461"
+}

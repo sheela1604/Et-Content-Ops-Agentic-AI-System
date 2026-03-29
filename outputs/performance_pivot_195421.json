@@ -1,0 +1,36 @@
+{
+  "input_type": "ENGAGEMENT_DATA",
+  "raw_input": "\nQ1 2026 Content Performance Report — Economic Times Digital\n\nChannel Performance (Jan–Mar 2026):\n- Video content: 4.2M average views, 8.3% engagement rate, 3.1 min avg watch time\n- Long-form articles: 890K average views, 2.1% engagement rate, 1.8 min avg read time\n- Infographics: 1.2M average views, 4.5% engagement rate\n- Social posts (text only): 340K average reach, 1.2% engagement rate\n\nAudience segment: 25-40 age group, urban, finance-interested\n\nKey insight: Video content outperforms text articles by 4.7x on engagement rate.\nShort-form video (under 90 seconds) shows highest completion rate at 67%.\n\nCurrent content mix: 20% video, 55% articles, 15% infographics, 10% social\nRecommended rebalance based on data: increase video to 50%+\n",
+  "research_brief": "",
+  "blog_post": "",
+  "social_posts": {},
+  "faq": "",
+  "review_status": "PASS",
+  "violations": [],
+  "retry_count": 0,
+  "confidence_scores": {},
+  "human_approved": false,
+  "human_feedback": "",
+  "hindi_content": "",
+  "tamil_content": "",
+  "content_calendar": "{\n  \"week_1\": [\n    {\n      \"day\": \"Mon\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Market Analysis: Q1 Performance\",\n      \"channel\": \"YouTube\"\n    },\n    {\n      \"day\": \"Tue\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Personal Finance Tips\",\n      \"channel\": \"Facebook\"\n    },\n    {\n      \"day\": \"Wed\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Economic Outlook: Q2 Predictions\",\n      \"channel\": \"Twitter\"\n    },\n    {\n      \"day\": \"Thu\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Investment Strategies\",\n      \"channel\": \"Instagram\"\n    },\n    {\n      \"day\": \"Fri\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Business News Update\",\n      \"channel\": \"LinkedIn\"\n    }\n  ],\n  \"week_2\": [\n    {\n      \"day\": \"Mon\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Stock Market Trends\",\n      \"channel\": \"YouTube\"\n    },\n    {\n      \"day\": \"Tue\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Financial Planning\",\n      \"channel\": \"Facebook\"\n    },\n    {\n      \"day\": \"Wed\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Economic Indicators\",\n      \"channel\": \"Twitter\"\n    },\n    {\n      \"day\": \"Thu\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Wealth Creation Strategies\",\n      \"channel\": \"Instagram\"\n    },\n    {\n      \"day\": \"Fri\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Market Insights\",\n      \"channel\": \"LinkedIn\"\n    }\n  ],\n  \"week_3\": [\n    {\n      \"day\": \"Mon\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Business News Update\",\n      \"channel\": \"YouTube\"\n    },\n    {\n      \"day\": \"Tue\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Personal Finance Advice\",\n      \"channel\": \"Facebook\"\n    },\n    {\n      \"day\": \"Wed\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Economic Analysis\",\n      \"channel\": \"Twitter\"\n    },\n    {\n      \"day\": \"Thu\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Investment Opportunities\",\n      \"channel\": \"Instagram\"\n    },\n    {\n      \"day\": \"Fri\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Financial Literacy\",\n      \"channel\": \"LinkedIn\"\n    }\n  ],\n  \"week_4\": [\n    {\n      \"day\": \"Mon\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Market Trends\",\n      \"channel\": \"YouTube\"\n    },\n    {\n      \"day\": \"Tue\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Financial Planning Tips\",\n      \"channel\": \"Facebook\"\n    },\n    {\n      \"day\": \"Wed\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Economic Outlook\",\n      \"channel\": \"Twitter\"\n    },\n    {\n      \"day\": \"Thu\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Wealth Creation Strategies\",\n      \"channel\": \"Instagram\"\n    },\n    {\n      \"day\": \"Fri\",\n      \"format\": \"video|article|social|infographic\",\n      \"topic\": \"Business News Update\",\n      \"channel\": \"LinkedIn\"\n    }\n  ]\n}",
+  "strategy_recommendation": "Based on the Q1 2026 content performance report, video content outperforms text articles by 4.7x on engagement rate, making it the top-performing format. To maximize engagement, we recommend increasing video content to 50%+ of the overall content mix. This will allow us to capitalize on the high engagement rates and completion rates of short-form video content.",
+  "audit_log": [
+    {
+      "timestamp": "2026-03-26T19:54:19.311791",
+      "agent": "supervisor",
+      "decision": "ROUTE → ENGAGEMENT_DATA",
+      "reasoning": "The input contains analytics data and performance metrics from a content performance report.",
+      "retry_count": 0
+    },
+    {
+      "timestamp": "2026-03-26T19:54:21.169775",
+      "agent": "strategy",
+      "decision": "STRATEGY GENERATED",
+      "reasoning": "Analysed engagement data and produced 4-week content calendar",
+      "retry_count": 0
+    }
+  ],
+  "pipeline_start_time": "2026-03-26T19:54:17.986717",
+  "completed_at": "2026-03-26T19:54:21.172083"
+}

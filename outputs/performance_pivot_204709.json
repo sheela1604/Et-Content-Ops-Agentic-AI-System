@@ -1,0 +1,36 @@
+{
+  "input_type": "ENGAGEMENT_DATA",
+  "raw_input": "\nQ1 2026 Content Performance Report — Economic Times Digital\n\nChannel Performance (Jan–Mar 2026):\n- Video content: 4.2M average views, 8.3% engagement rate, 3.1 min avg watch time\n- Long-form articles: 890K average views, 2.1% engagement rate, 1.8 min avg read time\n- Infographics: 1.2M average views, 4.5% engagement rate\n- Social posts (text only): 340K average reach, 1.2% engagement rate\n\nAudience segment: 25-40 age group, urban, finance-interested\n\nKey insight: Video content outperforms text articles by 4.7x on engagement rate.\nShort-form video (under 90 seconds) shows highest completion rate at 67%.\n\nCurrent content mix: 20% video, 55% articles, 15% infographics, 10% social\nRecommended rebalance based on data: increase video to 50%+\n",
+  "research_brief": "",
+  "blog_post": "",
+  "social_posts": {},
+  "faq": "",
+  "review_status": "PASS",
+  "violations": [],
+  "retry_count": 0,
+  "confidence_scores": {},
+  "human_approved": false,
+  "human_feedback": "",
+  "hindi_content": "",
+  "tamil_content": "",
+  "content_calendar": "{\n  \"week_1\": [\n    {\n      \"day\": \"Mon\",\n      \"format\": \"video\",\n      \"topic\": \"Market Trends Analysis\",\n      \"channel\": \"YouTube\"\n    },\n    {\n      \"day\": \"Tue\",\n      \"format\": \"article\",\n      \"topic\": \"Investment Strategies for Beginners\",\n      \"channel\": \"Economic Times Website\"\n    },\n    {\n      \"day\": \"Wed\",\n      \"format\": \"social\",\n      \"topic\": \"Daily Market Update\",\n      \"channel\": \"Twitter\"\n    },\n    {\n      \"day\": \"Thu\",\n      \"format\": \"infographic\",\n      \"topic\": \"Key Economic Indicators\",\n      \"channel\": \"LinkedIn\"\n    },\n    {\n      \"day\": \"Fri\",\n      \"format\": \"video\",\n      \"topic\": \"Expert Interview: Financial Planning\",\n      \"channel\": \"Facebook\"\n    }\n  ],\n  \"week_2\": [\n    {\n      \"day\": \"Mon\",\n      \"format\": \"video\",\n      \"topic\": \"Stock Market Analysis\",\n      \"channel\": \"Instagram\"\n    },\n    {\n      \"day\": \"Tue\",\n      \"format\": \"article\",\n      \"topic\": \"Personal Finance Tips\",\n      \"channel\": \"Economic Times Website\"\n    },\n    {\n      \"day\": \"Wed\",\n      \"format\": \"social\",\n      \"topic\": \"Market News Roundup\",\n      \"channel\": \"Twitter\"\n    },\n    {\n      \"day\": \"Thu\",\n      \"format\": \"infographic\",\n      \"topic\": \"Economic Calendar\",\n      \"channel\": \"LinkedIn\"\n    },\n    {\n      \"day\": \"Fri\",\n      \"format\": \"video\",\n      \"topic\": \"Financial Literacy for Students\",\n      \"channel\": \"YouTube\"\n    }\n  ],\n  \"week_3\": [\n    {\n      \"day\": \"Mon\",\n      \"format\": \"video\",\n      \"topic\": \"Cryptocurrency Market Update\",\n      \"channel\": \"Facebook\"\n    },\n    {\n      \"day\": \"Tue\",\n      \"format\": \"article\",\n      \"topic\": \"Investment Portfolio Management\",\n      \"channel\": \"Economic Times Website\"\n    },\n    {\n      \"day\": \"Wed\",\n      \"format\": \"social\",\n      \"topic\": \"Daily Market Update\",\n      \"channel\": \"Twitter\"\n    },\n    {\n      \"day\": \"Thu\",\n      \"format\": \"infographic\",\n      \"topic\": \"Key Economic Indicators\",\n      \"channel\": \"LinkedIn\"\n    },\n    {\n      \"day\": \"Fri\",\n      \"format\": \"video\",\n      \"topic\": \"Expert Interview: Financial Planning\",\n      \"channel\": \"Instagram\"\n    }\n  ],\n  \"week_4\": [\n    {\n      \"day\": \"Mon\",\n      \"format\": \"video\",\n      \"topic\": \"Market Trends Analysis\",\n      \"channel\": \"YouTube\"\n    },\n    {\n      \"day\": \"Tue\",\n      \"format\": \"article\",\n      \"topic\": \"Investment Strategies for Beginners\",\n      \"channel\": \"Economic Times Website\"\n    },\n    {\n      \"day\": \"Wed\",\n      \"format\": \"social\",\n      \"topic\": \"Daily Market Update\",\n      \"channel\": \"Twitter\"\n    },\n    {\n      \"day\": \"Thu\",\n      \"format\": \"infographic\",\n      \"topic\": \"Economic Calendar\",\n      \"channel\": \"LinkedIn\"\n    },\n    {\n      \"day\": \"Fri\",\n      \"format\": \"video\",\n      \"topic\": \"Financial Literacy for Students\",\n      \"channel\": \"Facebook\"\n    }\n  ]\n}",
+  "strategy_recommendation": "The top-performing format is video content, with an engagement rate 4.7x higher than text articles. To capitalize on this, we recommend rebalancing the content mix to prioritize video content, increasing it to 50% or more. This will help drive higher engagement and better connect with our finance-interested audience.",
+  "audit_log": [
+    {
+      "timestamp": "2026-03-28T20:47:06.889709",
+      "agent": "supervisor",
+      "decision": "ROUTE → ENGAGEMENT_DATA",
+      "reasoning": "The input contains analytics data and performance metrics from a content performance report.",
+      "retry_count": 0
+    },
+    {
+      "timestamp": "2026-03-28T20:47:09.548459",
+      "agent": "strategy",
+      "decision": "STRATEGY GENERATED",
+      "reasoning": "Analysed engagement data and produced 4-week content calendar",
+      "retry_count": 0
+    }
+  ],
+  "pipeline_start_time": "2026-03-28T20:47:03.517914",
+  "completed_at": "2026-03-28T20:47:09.551587"
+}

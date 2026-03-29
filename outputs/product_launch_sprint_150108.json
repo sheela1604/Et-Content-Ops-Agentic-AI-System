@@ -1,0 +1,120 @@
+{
+  "input_type": "PRODUCT_SPEC",
+  "raw_input": "\nPRODUCT SPEC — NovaPay Digital Savings Account\n\nProduct Name: NovaPay SmartSave\nCategory: Digital Savings & Investment Platform\nLaunch Date: April 2026\nCompany: NovaPay Financial Technologies Pvt. Ltd. (SEBI-registered)\n\nPRODUCT OVERVIEW\nNovaPay SmartSave is a mobile-first savings account that automatically sweeps\nidle balances into liquid mutual funds, offering customers higher returns than\ntraditional savings accounts while maintaining instant liquidity.\n\nKEY FEATURES\n- Auto-sweep technology: balances above ₹10,000 automatically invested in\n  SEBI-approved liquid funds\n- Instant withdrawal: funds accessible within 30 minutes, 24/7\n- Zero lock-in period\n- Integrated UPI payments\n- Real-time portfolio dashboard\n\nFINANCIAL DETAILS\n- Savings account interest: 4% per annum (RBI regulated)\n- Liquid fund historical average: 6.5-7.2% per annum (last 3 years, source: AMFI data)\n- Minimum balance: ₹1,000\n- Auto-sweep threshold: configurable between ₹5,000 and ₹50,000\n\nREGULATORY COMPLIANCE\n- SEBI registration: INZ000XXXXXX\n- RBI banking licence: partnered with SBM Bank India\n- All mutual fund investments through AMFI-registered AMCs\n\nTARGET AUDIENCE\n- Urban millennials (25-38 years)\n- First-time investors\n- Salaried professionals seeking passive wealth growth\n\nCOMPETITIVE POSITIONING\n- Versus traditional FD: higher liquidity, comparable returns\n- Versus other neo-banks: automated investment (no manual action needed)\n\nLAUNCH MARKETS\n- Phase 1: Mumbai, Bengaluru, Hyderabad, Delhi NCR\n- Phase 2: Tier-2 cities (Q3 2026)\n",
+  "research_brief": "{\n  \"VERIFIED_FACTS\": [\n    {\"claim\": \"NovaPay SmartSave is a mobile-first savings account that automatically sweeps idle balances into liquid mutual funds.\", \"source\": \"product spec\"},\n    {\"claim\": \"The product offers customers higher returns than traditional savings accounts while maintaining instant liquidity.\", \"source\": \"product spec\"},\n    {\"claim\": \"Auto-sweep technology: balances above ₹10,000 automatically invested in SEBI-approved liquid funds\", \"source\": \"product spec\"},\n    {\"claim\": \"Instant withdrawal: funds accessible within 30 minutes, 24/7\", \"source\": \"product spec\"},\n    {\"claim\": \"Zero lock-in period\", \"source\": \"product spec\"},\n    {\"claim\": \"Integrated UPI payments\", \"source\": \"product spec\"},\n    {\"claim\": \"Real-time portfolio dashboard\", \"source\": \"product spec\"},\n    {\"claim\": \"Savings account interest: 4% per annum (RBI regulated)\", \"source\": \"product spec\"},\n    {\"claim\": \"Liquid fund historical average: 6.5-7.2% per annum (last 3 years, source: AMFI data)\", \"source\": \"product spec\"},\n    {\"claim\": \"Minimum balance: ₹1,000\", \"source\": \"product spec\"},\n    {\"claim\": \"Auto-sweep threshold: configurable between ₹5,000 and ₹50,000\", \"source\": \"product spec\"},\n    {\"claim\": \"SEBI registration: INZ000XXXXXX\", \"source\": \"product spec\"},\n    {\"claim\": \"RBI banking licence: partnered with SBM Bank India\", \"source\": \"product spec\"},\n    {\"claim\": \"All mutual fund investments through AMFI-registered AMCs\", \"source\": \"product spec\"}\n  ],\n  \"UNVERIFIED_CLAIMS\": [],\n  \"KEY_CONTEXT\": \"NovaPay SmartSave is a digital savings account that offers higher returns than traditional savings accounts while maintaining instant liquidity. It is designed for urban millennials, first-time investors, and salaried professionals seeking passive wealth growth. The product will be launched in select cities starting April 2026.\",\n  \"TARGET_AUDIENCE\": \"Urban millennials (25-38 years), First-time investors, Salaried professionals\",\n  \"KEY_MESSAGES\": [\n    \"Earn higher returns than traditional savings accounts with NovaPay SmartSave\",\n    \"Automated investment and instant liquidity make it easy to grow your wealth\",\n    \"Partnered with SEBI-approved liquid funds for secure investments\"\n  ]\n}",
+  "blog_post": "**NovaPay SmartSave: A Mobile-First Savings Account with a Twist**\n\nIn a bid to attract tech-savvy Indians, NovaPay has launched its mobile-first savings account, SmartSave. This innovative product allows customers to automatically sweep their idle balances into liquid mutual funds, offering higher returns than traditional savings accounts while maintaining instant liquidity.\n\n**Auto-Sweep Technology: A Game Changer for Savers**\n\nOne of the standout features of NovaPay SmartSave is its auto-sweep technology. According to the product spec, balances above ₹10,000 are automatically invested in SEBI-approved liquid funds. This means customers can earn higher returns on their savings without having to lift a finger. For instance, historically, liquid funds have offered an average return of 6.5-7.2% per annum over the last three years (source: AMFI data).\n\n**Instant Access and Control**\n\nAnother key feature of NovaPay SmartSave is its instant withdrawal facility. Customers can access their funds within 30 minutes, 24/7, making it ideal for those who need quick access to their money. The product also offers a real-time portfolio dashboard, allowing customers to track their investments and make informed decisions. Additionally, integrated UPI payments enable seamless transactions.\n\n**Configurable Auto-Sweep Threshold and Minimum Balance**\n\nOne of the most user-friendly features of NovaPay SmartSave is its configurable auto-sweep threshold. Customers can set the threshold between ₹5,000 and ₹50,000, giving them complete control over their savings. The minimum balance requirement for the account is a reasonable ₹1,000, making it accessible to a wide range of customers.\n\n**Disclaimer:**\n\nConsult a SEBI-registered investment advisor before investing in any mutual fund or financial product.\n\nIn conclusion, NovaPay SmartSave offers a unique combination of features that set it apart from traditional savings accounts. With its auto-sweep technology, instant withdrawal facility, and real-time portfolio dashboard, this mobile-first savings account is an attractive option for tech-savvy Indians looking to earn higher returns on their savings while maintaining liquidity.\n\nAs always, it's essential to do your own research and consult with a financial expert before making any investment decisions. With NovaPay SmartSave, you can take the first step towards smart saving and investing.",
+  "social_posts": {
+    "linkedin": "{\n  \"linkedin\": \"Discover NovaPay SmartSave, a digital savings account designed for urban millennials and first-time investors. Offering higher returns than traditional accounts while maintaining instant liquidity, it's perfect for passive wealth growth. Launching in select cities starting April 202",
+    "twitter": "{\n  \"linkedin\": \"Discover NovaPay SmartSave, a digital savings account designed for urban millennials and first-time investors. Offering higher returns than traditional accounts while maintaining instant liquidity, it's perfect for passive ",
+    "instagram": "{\n  \"linkedin\": \"Discover NovaPay SmartSave, a digital savings account designed for urban millennials and first-time investors. Offering higher returns than traditional accounts while maintaining instant liquidity, it's perfect for passive wealth growth. Launching in select cities starting April 202"
+  },
+  "faq": "{\"faqs\": [{\"question\": \"What is the auto-sweep feature of NovaPay SmartSave and how does it work?\", \"answer\": \"Auto-sweep technology: balances above \\u20b910,000 automatically invested in SEBI-approved liquid funds\"}, {\"question\": \"Can I withdraw my money from NovaPay SmartSave immediately?\", \"answer\": \"Instant withdrawal: funds accessible within 30 minutes, 24/7\"}, {\"question\": \"Are the returns on NovaPay SmartSave higher than traditional savings accounts?\", \"answer\": \"The product offers customers higher returns than traditional savings accounts while maintaining instant liquidity.\"}, {\"question\": \"What is the minimum balance required to start using auto-sweep in NovaPay SmartSave?\", \"answer\": \"Auto-sweep technology: balances above \\u20b910,000 automatically invested in SEBI-approved liquid funds\"}, {\"question\": \"How do I know if my transaction is eligible for auto-sweep in NovaPay SmartSave?\", \"answer\": \"Auto-sweep technology: balances above \\u20b910,000 automatically invested in SEBI-approved liquid funds\"}]}",
+  "review_status": "PASS",
+  "violations": [
+    {
+      "sentence": "This innovative product allows customers to automatically sweep their idle balances into liquid mutual funds, offering higher returns than traditional savings accounts while maintaining instant liquidity.",
+      "rule": "DISCLAIMER-001",
+      "severity": "FLAG",
+      "description": "Investment content requires SEBI disclaimer",
+      "rewrite_suggestion": "Ensure footer includes: 'Consult a SEBI-registered investment advisor before investing.'"
+    },
+    {
+      "sentence": "According to the product spec, balances above ₹10,000 are automatically invested in SEBI-approved liquid funds.",
+      "rule": "DISCLAIMER-001",
+      "severity": "FLAG",
+      "description": "Investment content requires SEBI disclaimer",
+      "rewrite_suggestion": "Ensure footer includes: 'Consult a SEBI-registered investment advisor before investing.'"
+    },
+    {
+      "sentence": "The product also offers a real-time portfolio dashboard, allowing customers to track their investments and make informed decisions.",
+      "rule": "DISCLAIMER-001",
+      "severity": "FLAG",
+      "description": "Investment content requires SEBI disclaimer",
+      "rewrite_suggestion": "Ensure footer includes: 'Consult a SEBI-registered investment advisor before investing.'"
+    },
+    {
+      "sentence": "**Disclaimer:**\n\nConsult a SEBI-registered investment advisor before investing in any mutual fund or financial product.",
+      "rule": "DISCLAIMER-001",
+      "severity": "FLAG",
+      "description": "Investment content requires SEBI disclaimer",
+      "rewrite_suggestion": "Ensure footer includes: 'Consult a SEBI-registered investment advisor before investing.'"
+    },
+    {
+      "sentence": "With its auto-sweep technology, instant withdrawal facility, and real-time portfolio dashboard, this mobile-first savings account is an attractive option for tech-savvy Indians looking to earn higher returns on their savings while maintaining liquidity.",
+      "rule": "DISCLAIMER-001",
+      "severity": "FLAG",
+      "description": "Investment content requires SEBI disclaimer",
+      "rewrite_suggestion": "Ensure footer includes: 'Consult a SEBI-registered investment advisor before investing.'"
+    },
+    {
+      "sentence": "As always, it's essential to do your own research and consult with a financial expert before making any investment decisions.",
+      "rule": "DISCLAIMER-001",
+      "severity": "FLAG",
+      "description": "Investment content requires SEBI disclaimer",
+      "rewrite_suggestion": "Ensure footer includes: 'Consult a SEBI-registered investment advisor before investing.'"
+    },
+    {
+      "sentence": "With NovaPay SmartSave, you can take the first step towards smart saving and investing.",
+      "rule": "DISCLAIMER-001",
+      "severity": "FLAG",
+      "description": "Investment content requires SEBI disclaimer",
+      "rewrite_suggestion": "Ensure footer includes: 'Consult a SEBI-registered investment advisor before investing.'"
+    }
+  ],
+  "retry_count": 0,
+  "confidence_scores": {
+    "7.2%": "verified"
+  },
+  "human_approved": true,
+  "human_feedback": "",
+  "hindi_content": "नवापे स्मार्टसेव, एक डिजिटल बचत खाता है, जो शहरी युवाओं और पहले निवेशकों के लिए डिज़ाइन किया गया है। उच्च रिटर्न प्रदान करता है और परंपरागत खातों से तेजी से लिक्विडिटी बनाए रखना, यह शांत वित्तीय वृद्धि के लिए आदर्श है। अप्रैल 2023 में चुनिंदा शहरों में शुरू होने वाला यह प्रोजेक्ट, आपको अपने सपनों की बचत बनाने में मदद करेगा।",
+  "tamil_content": "நோவாபே சார்ட்ஸேவ் என்ற ஒரு தகவல் திருப்புமுனை, நகர்ப் புதுவாழ்வாளர்கள் மற்றும் முதல் பங்கீட்டாளர்களுக்கான ஒரு இணையத் திருப்புமுனை உள்ளது. பாரம்பரிய அகற்றுமுறைகளை விட உயர் வருமானங்களை வழங்குகிறது, அதே நேரத்தில் ஏட்டு செலவுகளை எளிமையாகக் கொண்டாடுகிறது. இது பாஸ்பர் செலவு வளர்ச்சி அடிப்படையில் உதவுகிறது. ஏப்ரல் 2023 முதல் தேர்ந்தெடுக்கப்பட்ட நகரங்களில் தொடங்கி வரும்.",
+  "content_calendar": "",
+  "strategy_recommendation": "",
+  "audit_log": [
+    {
+      "timestamp": "2026-03-25T14:42:51.771792",
+      "agent": "supervisor",
+      "decision": "ROUTE → PRODUCT_SPEC",
+      "reasoning": "The input is a product description, spec sheet, or launch brief for the NovaPay SmartSave digital savings account.",
+      "retry_count": 0
+    },
+    {
+      "timestamp": "2026-03-25T14:47:13.052879",
+      "agent": "researcher",
+      "decision": "BRIEF READY",
+      "reasoning": "Fetched 0 RSS items, extracted 8 keywords",
+      "retry_count": 0
+    },
+    {
+      "timestamp": "2026-03-25T14:52:57.313114",
+      "agent": "drafter",
+      "decision": "DRAFT COMPLETE",
+      "reasoning": "Blog (700w) + 3 social variants + FAQ generated. Passing to Reviewer.",
+      "retry_count": 0
+    },
+    {
+      "timestamp": "2026-03-25T14:55:27.737882",
+      "agent": "reviewer",
+      "decision": "PASS",
+      "reasoning": "LLM review parse error — defaulting to PASS | Flags noted: 7",
+      "retry_count": 0
+    },
+    {
+      "timestamp": "2026-03-25T14:58:32.882780",
+      "agent": "human_gate",
+      "decision": "APPROVED",
+      "reasoning": "Human editorial decision",
+      "retry_count": 0
+    },
+    {
+      "timestamp": "2026-03-25T15:01:08.255109",
+      "agent": "localizer",
+      "decision": "LOCALIZED",
+      "reasoning": "Instagram post localized to Hindi and Tamil with cultural adaptation",
+      "retry_count": 0
+    }
+  ],
+  "pipeline_start_time": "2026-03-25T14:42:13.843076",
+  "completed_at": "2026-03-25T15:01:08.274155"
+}

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ET Content Ops — Agent Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --bg:        #0b0d11;
+    --surface:   #13161d;
+    --surface2:  #1a1e28;
+    --border:    #252a38;
+    --accent:    #4f7cff;
+    --accent2:   #a78bfa;
+    --green:     #34d399;
+    --red:       #f87171;
+    --amber:     #fbbf24;
+    --text:      #e2e8f0;
+    --muted:     #64748b;
+    --mono:      'DM Mono', monospace;
+    --sans:      'DM Sans', sans-serif;
+    --display:   'Syne', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+  .logo { font-family: var(--display); font-size: 16px; font-weight: 700; letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  .status-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 99px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .status-pill.running { border-color: var(--accent); color: var(--accent); animation: pulse 1.5s infinite; }
+  .status-pill.done    { border-color: var(--green);  color: var(--green); }
+  .status-pill.error   { border-color: var(--red);    color: var(--red); }
+
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+
+  /* ── Layout ── */
+  .layout {
+    display: grid;
+    grid-template-columns: 280px 1fr 320px;
+    height: calc(100vh - 56px);
+    overflow: hidden;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    border-right: 1px solid var(--border);
+    padding: 24px 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .sidebar-section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .scenario-btn {
+    width: 100%;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 6px;
+  }
+  .scenario-btn:hover { border-color: var(--accent); background: var(--surface2); }
+  .scenario-btn.active { border-color: var(--accent); background: #1a2340; }
+  .scenario-btn .btn-name { font-weight: 500; color: var(--text); font-size: 13px; }
+  .scenario-btn .btn-type {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  .run-btn {
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-family: var(--display);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 0.02em;
+  }
+  .run-btn:hover:not(:disabled) { background: #3d6aff; transform: translateY(-1px); }
+  .run-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+  textarea {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 11px;
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.15s;
+  }
+  textarea:focus { outline: none; border-color: var(--accent); }
+
+  /* ── Main panel ── */
+  .main { overflow-y: auto; padding: 28px 32px; display: flex; flex-direction: column; gap: 20px; }
+
+  .metric-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .metric-card .m-label { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .metric-card .m-value { font-family: var(--display); font-size: 24px; font-weight: 700; }
+  .metric-card .m-value.green { color: var(--green); }
+  .metric-card .m-value.red   { color: var(--red); }
+  .metric-card .m-value.amber { color: var(--amber); }
+  .metric-card .m-value.blue  { color: var(--accent); }
+
+  /* ── Agent trace ── */
+  .agent-pipeline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    padding: 4px 0;
+  }
+  .agent-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 80px;
+  }
+  .agent-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--display);
+    color: var(--muted);
+    transition: all 0.3s;
+    position: relative;
+  }
+  .agent-dot.active  { border-color: var(--accent); color: var(--accent); animation: pulse 1s infinite; }
+  .agent-dot.done    { border-color: var(--green); color: var(--green); background: rgba(52,211,153,0.08); }
+  .agent-dot.failed  { border-color: var(--red);   color: var(--red);   background: rgba(248,113,113,0.08); }
+  .agent-label { font-family: var(--mono); font-size: 9px; color: var(--muted); text-align: center; }
+  .pipe-line { width: 28px; height: 2px; background: var(--border); flex-shrink: 0; margin-bottom: 20px; transition: background 0.3s; }
+  .pipe-line.active { background: var(--accent); }
+
+  /* ── Content tabs ── */
+  .tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border); }
+  .tab {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 8px 14px;
+    cursor: pointer;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.15s;
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .content-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 14px;
+    white-space: pre-wrap;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .content-card.mono { font-family: var(--mono); font-size: 11px; }
+  .content-card.placeholder { color: var(--muted); font-style: italic; }
+
+  .social-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .social-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .social-card .platform {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent2);
+    margin-bottom: 8px;
+  }
+  .social-card p { font-size: 12px; line-height: 1.6; color: var(--text); }
+
+  .lang-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .lang-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .lang-card .lang-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--green);
+    margin-bottom: 8px;
+  }
+
+  /* ── Right panel: Audit log ── */
+  .audit-panel {
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .audit-header {
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .audit-entries { flex: 1; overflow-y: auto; padding: 8px; }
+  .audit-entry {
+    padding: 10px 10px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    border: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+  .audit-entry:hover { border-color: var(--border); }
+  .audit-entry .ae-agent {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 3px;
+  }
+  .audit-entry .ae-decision { font-size: 12px; font-weight: 500; color: var(--text); }
+  .audit-entry .ae-reasoning { font-size: 11px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
+  .audit-entry .ae-time { font-family: var(--mono); font-size: 10px; color: var(--muted); opacity: 0.6; }
+
+  .ae-agent.supervisor { color: #818cf8; }
+  .ae-agent.researcher { color: #60a5fa; }
+  .ae-agent.drafter    { color: #fbbf24; }
+  .ae-agent.reviewer   { color: #f472b6; }
+  .ae-agent.human_gate { color: #94a3b8; }
+  .ae-agent.localizer  { color: var(--green); }
+  .ae-agent.strategy   { color: var(--green); }
+
+  /* ── Violations ── */
+  .violation-card {
+    background: rgba(248,113,113,0.05);
+    border: 1px solid rgba(248,113,113,0.2);
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 8px;
+  }
+  .v-rule { font-family: var(--mono); font-size: 10px; color: var(--red); margin-bottom: 4px; }
+  .v-sentence { font-size: 12px; color: var(--text); margin-bottom: 6px; font-style: italic; }
+  .v-fix { font-size: 12px; color: var(--green); }
+
+  .empty-state {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--muted);
+  }
+  .empty-state .big { font-size: 32px; margin-bottom: 8px; }
+  .empty-state p { font-size: 13px; }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ET <span>Content Ops</span></div>
+  <div id="status-pill" class="status-pill">IDLE</div>
+</header>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <div class="sidebar-section-label">Judge scenarios</div>
+      <button class="scenario-btn active" onclick="selectScenario('product_launch', this)">
+        <div class="btn-name">Product Launch Sprint</div>
+        <div class="btn-type">PRODUCT_SPEC</div>
+      </button>
+      <button class="scenario-btn" onclick="selectScenario('compliance_check', this)">
+        <div class="btn-name">Compliance Rejection</div>
+        <div class="btn-type">COMPLIANCE_CHECK</div>
+      </button>
+      <button class="scenario-btn" onclick="selectScenario('performance_pivot', this)">
+        <div class="btn-name">Performance Pivot</div>
+        <div class="btn-type">ENGAGEMENT_DATA</div>
+      </button>
+      <button class="scenario-btn" onclick="selectScenario('custom', this)">
+        <div class="btn-name">Custom input</div>
+        <div class="btn-type">AUTO-DETECT</div>
+      </button>
+    </div>
+
+    <div id="custom-input-section" style="display:none">
+      <div class="sidebar-section-label">Custom input</div>
+      <textarea id="custom-text" placeholder="Paste your product spec, blog draft, or engagement data here..."></textarea>
+    </div>
+
+    <div>
+      <button class="run-btn" id="run-btn" onclick="runPipeline()">Run pipeline</button>
+    </div>
+
+    <div id="timing-section" style="display:none">
+      <div class="sidebar-section-label">Benchmark</div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px;">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-bottom:4px;">AGENT TIME</div>
+        <div id="timing-val" style="font-family:var(--display);font-size:22px;font-weight:700;color:var(--accent)">—</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:6px;">vs ~4h manual</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Metrics row -->
+    <div class="metric-row">
+      <div class="metric-card">
+        <div class="m-label">Review</div>
+        <div class="m-value" id="m-review" style="color:var(--muted)">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Retries</div>
+        <div class="m-value blue" id="m-retries">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Violations</div>
+        <div class="m-value" id="m-violations" style="color:var(--muted)">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Human gate</div>
+        <div class="m-value" id="m-human" style="color:var(--muted)">—</div>
+      </div>
+    </div>
+
+    <!-- Agent pipeline visual -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;">Agent pipeline</div>
+      <div class="agent-pipeline" id="agent-pipeline">
+        <div class="agent-node"><div class="agent-dot" id="node-supervisor">S</div><div class="agent-label">Supervisor</div></div>
+        <div class="pipe-line" id="pipe-s-r"></div>
+        <div class="agent-node"><div class="agent-dot" id="node-researcher">R</div><div class="agent-label">Researcher</div></div>
+        <div class="pipe-line" id="pipe-r-d"></div>
+        <div class="agent-node"><div class="agent-dot" id="node-drafter">D</div><div class="agent-label">Drafter</div></div>
+        <div class="pipe-line" id="pipe-d-rv"></div>
+        <div class="agent-node"><div class="agent-dot" id="node-reviewer">Rv</div><div class="agent-label">Reviewer</div></div>
+        <div class="pipe-line" id="pipe-rv-h"></div>
+        <div class="agent-node"><div class="agent-dot" id="node-human_gate">H</div><div class="agent-label">Human gate</div></div>
+        <div class="pipe-line" id="pipe-h-l"></div>
+        <div class="agent-node"><div class="agent-dot" id="node-localizer">L</div><div class="agent-label">Localizer</div></div>
+      </div>
+    </div>
+
+    <!-- Content tabs -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;">
+      <div class="tabs">
+        <div class="tab active" onclick="switchTab('blog', this)">Blog post</div>
+        <div class="tab" onclick="switchTab('social', this)">Social (3)</div>
+        <div class="tab" onclick="switchTab('faq', this)">FAQ</div>
+        <div class="tab" onclick="switchTab('localization', this)">Localization</div>
+        <div class="tab" onclick="switchTab('strategy', this)">Strategy</div>
+        <div class="tab" onclick="switchTab('telegram', this)">Telegram</div>
+        <div class="tab" onclick="switchTab('violations', this)">Violations</div>
+      </div>
+
+      <div id="tab-blog" class="tab-content active">
+        <div class="content-card placeholder" id="blog-content">Run a scenario to see the generated blog post.</div>
+      </div>
+
+      <div id="tab-social" class="tab-content">
+        <div class="social-grid" id="social-content">
+          <div class="social-card"><div class="platform">LinkedIn</div><p style="color:var(--muted);font-style:italic">Pending...</p></div>
+          <div class="social-card"><div class="platform">Twitter</div><p style="color:var(--muted);font-style:italic">Pending...</p></div>
+          <div class="social-card"><div class="platform">Instagram</div><p style="color:var(--muted);font-style:italic">Pending...</p></div>
+        </div>
+      </div>
+
+      <div id="tab-faq" class="tab-content">
+        <div class="content-card placeholder" id="faq-content">Run a scenario to see the FAQ.</div>
+      </div>
+
+      <div id="tab-localization" class="tab-content">
+        <div class="lang-grid" id="localization-content">
+          <div class="lang-card"><div class="lang-label">Hindi</div><p style="color:var(--muted);font-style:italic;font-size:12px">Pending...</p></div>
+          <div class="lang-card"><div class="lang-label">Tamil</div><p style="color:var(--muted);font-style:italic;font-size:12px">Pending...</p></div>
+        </div>
+      </div>
+
+      <div id="tab-strategy" class="tab-content">
+        <div class="content-card placeholder" id="strategy-content">Run the Performance Pivot scenario to see strategy output.</div>
+      </div>
+      
+      <div id="tab-telegram" class="tab-content">
+        <div class="content-card placeholder" id="telegram-content">
+          Run a scenario to see Telegram publish status.
+        </div>
+      </div>
+
+      <div id="tab-violations" class="tab-content">
+        <div id="violations-content" style="margin-top:14px">
+          <div class="content-card placeholder">No violations detected yet.</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Audit panel -->
+  <aside class="audit-panel">
+    <div class="audit-header">Audit trail</div>
+    <div class="audit-entries" id="audit-entries">
+      <div class="empty-state">
+        <div class="big">◎</div>
+        <p>Agent decisions will appear here as the pipeline runs.</p>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<script>
+const API = 'http://localhost:8000';
+let selectedScenario = 'product_launch';
+
+function selectScenario(id, el) {
+  selectedScenario = id;
+  document.querySelectorAll('.scenario-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('custom-input-section').style.display = id === 'custom' ? 'block' : 'none';
+}
+
+function switchTab(name, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+}
+
+function setStatus(s) {
+  const p = document.getElementById('status-pill');
+  p.textContent = s.toUpperCase();
+  p.className = 'status-pill ' + (s === 'running' ? 'running' : s === 'done' ? 'done' : s === 'error' ? 'error' : '');
+}
+
+function setNodeState(id, state) {
+  const el = document.getElementById('node-' + id);
+  if (el) { el.className = 'agent-dot ' + state; }
+}
+
+function setPipeActive(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.add('active');
+}
+
+function resetPipeline() {
+  ['supervisor','researcher','drafter','reviewer','human_gate','localizer','strategy'].forEach(n => setNodeState(n, ''));
+  document.querySelectorAll('.pipe-line').forEach(p => p.classList.remove('active'));
+}
+
+function renderAuditLog(entries) {
+  const container = document.getElementById('audit-entries');
+  if (!entries || entries.length === 0) return;
+  container.innerHTML = '';
+  entries.forEach(e => {
+    const d = document.createElement('div');
+    d.className = 'audit-entry';
+    const t = e.timestamp ? e.timestamp.slice(11,19) : '';
+    d.innerHTML = `
+      <div class="ae-agent ${e.agent}">${(e.agent||'').toUpperCase()}</div>
+      <div class="ae-decision">${e.decision || ''}</div>
+      <div class="ae-reasoning">${e.reasoning || ''}</div>
+      <div class="ae-time">${t} · retry ${e.retry_count ?? 0}</div>
+    `;
+    container.appendChild(d);
+  });
+  container.scrollTop = container.scrollHeight;
+}
+
+function renderMetrics(data) {
+  const review = document.getElementById('m-review');
+  review.textContent = data.review_status || '—';
+  review.className = 'm-value ' + (data.review_status === 'PASS' ? 'green' : data.review_status === 'FAIL' ? 'red' : '');
+
+  document.getElementById('m-retries').textContent = data.retry_count ?? '—';
+
+  const vcount = (data.violations || []).length;
+  const mv = document.getElementById('m-violations');
+  mv.textContent = vcount;
+  mv.className = 'm-value ' + (vcount > 0 ? 'red' : 'green');
+
+  const mh = document.getElementById('m-human');
+  mh.textContent = data.human_approved ? 'APPROVED' : 'PENDING';
+  mh.className = 'm-value ' + (data.human_approved ? 'green' : 'amber');
+}
+
+function renderContent(data) {
+  // Blog
+  const blog = document.getElementById('blog-content');
+  if (data.blog_post) {
+    blog.innerHTML = data.blog_post
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
+    blog.classList.remove('placeholder');
+  }
+
+  // Telegram
+const published = data.published_assets || [];
+const telegramEl = document.getElementById('telegram-content');
+const telegramPosts = published.filter(p => p.type === 'social');
+if (telegramPosts.length > 0) {
+    telegramEl.innerHTML = telegramPosts.map(p => `
+        <div style="margin-bottom:12px">
+            <strong style="color:var(--accent2)">${p.platform.toUpperCase()}</strong>
+            <p style="margin-top:4px">${p.preview}...</p>
+            <span style="color:var(--green);font-size:11px">✓ Published to Telegram at ${p.time}</span>
+        </div>
+    `).join('');
+    telegramEl.classList.remove('placeholder');
+}
+
+  // Social
+  const social = data.social_posts || {};
+document.getElementById('social-content').innerHTML = ['linkedin','twitter','instagram','telegram'].map(p => `
+  <div class="social-card">
+    <div class="platform">${p}</div>
+    <p>${(typeof social[p] === 'string' ? social[p] : JSON.stringify(social[p])) || '<span style="color:var(--muted);font-style:italic">Not generated</span>'}</p>
+  </div>
+`).join('');
+
+  // FAQ
+  const faq = document.getElementById('faq-content');
+  if (data.faq) {
+    try {
+      const parsed = JSON.parse(data.faq);
+      const faqs = parsed.faqs || [];
+      faq.innerHTML = faqs.map(f => `<div style="margin-bottom:14px"><strong style="color:var(--accent2)">${f.question}</strong><p style="margin-top:4px;color:var(--text)">${f.answer}</p></div>`).join('');
+    } catch { faq.textContent = data.faq; }
+    faq.classList.remove('placeholder');
+  }
+
+  // Localization
+  document.getElementById('localization-content').innerHTML = `
+    <div class="lang-card"><div class="lang-label">Hindi</div><p style="font-size:13px;line-height:1.7">${data.hindi_content || '<span style="color:var(--muted);font-style:italic">Not generated</span>'}</p></div>
+    <div class="lang-card"><div class="lang-label">Tamil</div><p style="font-size:13px;line-height:1.7">${data.tamil_content || '<span style="color:var(--muted);font-style:italic">Not generated</span>'}</p></div>
+  `;
+
+  // Strategy
+  const strat = document.getElementById('strategy-content');
+  if (data.strategy_recommendation) {
+    strat.innerHTML = `<div style="margin-bottom:12px;font-size:13px;line-height:1.7">${data.strategy_recommendation}</div>`;
+    if (data.content_calendar) {
+      try {
+        const cal = JSON.parse(data.content_calendar);
+        strat.innerHTML += `<pre style="font-family:var(--mono);font-size:11px;color:var(--muted)">${JSON.stringify(cal,null,2)}</pre>`;
+      } catch { strat.innerHTML += `<pre style="font-family:var(--mono);font-size:11px">${data.content_calendar}</pre>`; }
+    }
+    strat.classList.remove('placeholder');
+  }
+
+  // Violations
+  const viol = data.violations || [];
+  const vc = document.getElementById('violations-content');
+  if (viol.length === 0) {
+    vc.innerHTML = '<div class="content-card" style="color:var(--green)">No violations detected. Content passed all compliance checks.</div>';
+  } else {
+    vc.innerHTML = viol.map(v => `
+      <div class="violation-card">
+        <div class="v-rule">${v.rule || ''} · ${v.severity || ''}</div>
+        <div class="v-sentence">"${v.sentence || ''}"</div>
+        <div class="v-fix">Fix: ${v.rewrite_suggestion || v.description || ''}</div>
+      </div>
+    `).join('');
+  }
+}
+
+function markAgentsFromLog(auditLog) {
+  const order = ['supervisor','researcher','drafter','reviewer','human_gate','localizer','strategy'];
+  const pipeMap = {
+    'researcher': 'pipe-s-r',
+    'drafter':    'pipe-r-d',
+    'reviewer':   'pipe-d-rv',
+    'human_gate': 'pipe-rv-h',
+    'localizer':  'pipe-h-l',
+    'strategy':   'pipe-h-l',
+  };
+  const seen = new Set((auditLog||[]).map(e => e.agent));
+  seen.forEach(agent => {
+    setNodeState(agent, 'done');
+    if (pipeMap[agent]) setPipeActive(pipeMap[agent]);
+  });
+}
+
+async function runPipeline() {
+  const btn = document.getElementById('run-btn');
+  btn.disabled = true;
+  setStatus('running');
+  resetPipeline();
+  setNodeState('supervisor', 'active');
+
+  const payload = { scenario: selectedScenario };
+  if (selectedScenario === 'custom') {
+    payload.custom_input = document.getElementById('custom-text').value;
+  }
+
+  try {
+    const res = await fetch(`${API}/run`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.detail || 'API error');
+    }
+
+    const data = await res.json();
+
+    // Update UI
+    renderMetrics(data);
+    renderContent(data);
+    renderAuditLog(data.audit_log || []);
+    markAgentsFromLog(data.audit_log || []);
+
+    // Timing
+    const t = data.elapsed_seconds;
+    document.getElementById('timing-section').style.display = 'block';
+    document.getElementById('timing-val').textContent = t + 's';
+    setStatus('done');
+
+  } catch (err) {
+    setStatus('error');
+    document.getElementById('audit-entries').innerHTML = `
+      <div style="padding:16px;color:var(--red);font-family:var(--mono);font-size:12px">
+        ERROR: ${err.message}<br><br>
+        Make sure the API server is running:<br>
+        cd et_content_ops && uvicorn ui.api:api --reload
+      </div>`;
+  } finally {
+    btn.disabled = false;
+  }
+}
+</script>
+</body>
+</html>
